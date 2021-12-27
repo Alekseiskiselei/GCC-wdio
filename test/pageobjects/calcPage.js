@@ -1,4 +1,6 @@
-class CalcPage {
+const Page = require('../pageobjects/page');
+
+class CalcPage extends Page {
   get switchFirstFrame() {
     return $('//*[@id="cloud-site"]/devsite-iframe/iframe');
   }
@@ -16,11 +18,11 @@ class CalcPage {
   }
 
   get selectFirstOption() {
-    return $('//*[@id="select_option_77"]/div[1]');
+    return $('//*[@id="select_option_77"]/div[@class="md-text"]');
   }
 
   get chooseSeries() {
-    return $('//md-select[@placeholder="Series"]//span[2]');
+    return $('//md-select[@placeholder="Series"]//span[@class="md-select-icon"]');
   }
 
   get selectN1Series() {
@@ -28,7 +30,7 @@ class CalcPage {
   }
 
   get chooseMachineType() {
-    return $('//md-select[@placeholder="Instance type"]//span[2]');
+    return $('//md-select[@placeholder="Instance type"]//span[@class="md-select-icon"]');
   }
 
   get selectN1S8Type() {
@@ -60,7 +62,9 @@ class CalcPage {
   }
 
   get chooselocalSSD() {
-    return $('//md-select[@ng-model="listingCtrl.computeServer.ssd"]//span[2]');
+    return $(
+      '//md-select[@ng-model="listingCtrl.computeServer.ssd"]//span[@class="md-select-icon"]'
+    );
   }
 
   get selectSize() {
@@ -70,7 +74,7 @@ class CalcPage {
   }
 
   get chooseDatacenterLocation() {
-    return $('//md-select[@placeholder="Datacenter location"]//span[2]');
+    return $('//md-select[@placeholder="Datacenter location"]//span[@class="md-select-icon"]');
   }
 
   get selectFrankfurt() {
@@ -78,7 +82,7 @@ class CalcPage {
   }
 
   get chooseUsageTerm() {
-    return $('//md-select[@placeholder="Committed usage"]//span[2]');
+    return $('//md-select[@placeholder="Committed usage"]//span[@class="md-select-icon"]');
   }
 
   get selectOneYear() {
